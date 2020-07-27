@@ -1,0 +1,36 @@
+
+body {font-family: sans-serif; background-color: hsl(120, 60%, 70%);}
+
+
+table 
+{ 
+	font-family: Sans-Serif; font-size: 
+	16px; margin: 46px; width: 700px;
+	text-align: center; border-collapse: collapse; 
+}
+
+th 
+{ 
+	font-size: 17px; font-weight: normal; padding: 9px; background: #87CEFA; 
+	border-top: 4px;
+    border-bottom: 1px; 
+    color: #039; 
+}
+
+td 
+{ 
+	padding: 8px;  background: #FFFFE0; border-bottom: 1px solid #fff; 
+	color: #669; border-top: 1px; 
+}
+ 
+tr:hover 
+td { background: #d0dafd; color: #339; }
+.editar {color: blue; cursor:pointer;}
+
+#contenedorForm {margin-left: 45px; font-size:12px;}
+
+.boton 
+{   color: black; padding: 6px; margin: 10px;
+  background-color: #b9c9fe;
+  font-weight: bold; 
+}
