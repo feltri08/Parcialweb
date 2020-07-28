@@ -1,17 +1,76 @@
 <!DOCTYPE html>
-<html> 
-<head> 
-	<title>Alimentos</title> <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="estilo.css">
-<script type="text/javascript" src="funciones.js"></script>
-<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
-</head>
-	<body>
+<html>
+  <head>
+    <title>Muestra datos editados</title>
+    <meta charset="utf-8" />
 
-		<input type="button" id="boton" value="Enviar parámetros">
-		<div id="cargaexterna">Aquí se mostrarán los parámetros enviados</div>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
 
-	</body>
+    <script type="text/javascript" src="functions.js"></script>
 
+
+  </head>
+
+  <body>
+    <table>
+      <tr>
+        <td>
+          <div id="estado"></div>
+        </td>
+        <td>
+          <div id="alimento"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Calorías (kCaL)</td>
+        <td>
+          <div id="calo"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Grasas (g)</td>
+        <td>
+          <div id="gra"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Proteína (g)</td>
+        <td>
+          <div id="pro"></div>
+        </td>
+      </tr>
+      <tr>
+        <td>Carbohidratos (g)</td>
+        <td>
+          <div id="car"></div>
+        </td>
+      </tr>
+    </table>
+
+    <script >
+    	const queryString = window.location.search;
+		console.log(queryString);
+		const params = new URLSearchParams(queryString);
+		ok = params.get("ok");
+		al = params.get("alimento");
+		cl = params.get("calorias");
+		gr = params.get("grasas");
+		pr= params.get("proteina");
+		ch = params.get("carbohidratos");
+		    if (ok == 1) 
+		    {
+		      document.getElementById("estado").innerHTML ='&#128512';
+		    } else 
+		    {
+		      document.getElementById("estado").innerHTML ='&#128542';
+		    }
+		document.getElementById("alimento").innerHTML = al + "<br>Alimento";
+		document.getElementById("calo").innerHTML = cl;
+		document.getElementById("gra").innerHTML = gr;
+		document.getElementById("pro").innerHTML = pr;
+		document.getElementById("car").innerHTML = ch;
+    </script>
+
+  </body>
 </html>

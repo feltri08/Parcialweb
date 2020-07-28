@@ -18,7 +18,7 @@ function Editable(nodo)
 	+'<td><input type="text" name="grasas" id="grasas" value="'+grasas+'" size="5"></td>'
 	+'<td><input type="text" name="proteina" id="proteina" value="'+proteina+'" size="5"></td>'
 	+'<td><input type="text" name="carbohidratos" id="carbohidratos" value="'+carbohidratos+'" size="5"></td>'
-	+'<td><select><option value=&#128512>bien</option><option value=&#128542>mal</option></select></td> <td>En edición</td>';
+	+'<td><select name=ok id=ok><option value="1">Bien</option><option value="2">Mal</option></select></td> <td>En edición</td>';
 
 	nodoTr.innerHTML = nuevo;
 	nodoContForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos'+
@@ -32,6 +32,7 @@ function Editable(nodo)
 	}
 }
 
+
 function capturarEnvio()
 {
 var nodoContForm = document.getElementById('contForm');
@@ -42,12 +43,11 @@ nodoContForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para
 '<td><input type="text" name="grasas" value="'+document.querySelector('#grasas').value+'"></td>'+
 '<td><input type="text" name="proteina" value="'+document.querySelector('#proteina').value+'"></td>'+
 '<td><input type="text" name="carbohidratos" value="'+document.querySelector('#carbohidratos').value+'"</td>>'+
+'<input type="hidden" name="ok" value="' +document.querySelector("#ok").value+'">' +
 '<input class="boton" type = "submit" value="Aceptar"> <input class="boton" type="reset" value="Cancelar">';
 document.formulario.submit();
 }
  
-
-
 function anular()
 {
 	window.location.reload();
