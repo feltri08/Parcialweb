@@ -12,7 +12,6 @@ function Editable(nodo)
 	var grasas = nodosEnTr[2].textContent; var proteina = nodosEnTr[3].textContent;
 	var carbohidratos = nodosEnTr[4].textContent; var ok= nodosEnTr[5].textContent;
 	var opciones = nodosEnTr[6].textContent;
-	
 
 	var nuevo= '<td><input type="text" name="alimento" id="alimento" value="'+alimento+'" size="10"></td>'
 	+'<td><input type="text" name="calorias" id="calorias" value="'+calorias+'" size="5"></td>'
@@ -23,7 +22,7 @@ function Editable(nodo)
 
 	nodoTr.innerHTML = nuevo;
 	nodoContForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos'+
-	'<form name = "formulario" action="http://aprenderaprogramar.com" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
+	'<form name = "formulario" action="editado.html" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
 	'<input class="boton" type = "submit" value="Aceptar"> <input class="boton" type="reset" value="Cancelar">';
 	editar = "true";}
 
@@ -33,23 +32,23 @@ function Editable(nodo)
 	}
 }
 
-
 function capturarEnvio()
 {
 var nodoContForm = document.getElementById('contForm');
 nodoContForm.innerHTML = 'Pulse Aceptar para guardar los cambios o cancelar para anularlos'+
-'<form name = "formulario" action="http://aprenderaprogramar.com" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
-'<input type="hidden" name="alimento" value="'+document.querySelector('#alimento').value+'">'+
-'<input type="hidden" name="calorias" value="'+document.querySelector('#calorias').value+'">'+
-'<input type="hidden" name="grasas" value="'+document.querySelector('#grasas').value+'">'+
-'<input type="hidden" name="proteina" value="'+document.querySelector('#proteina').value+'">'+
-'<input type="hidden" name="carbohidratos" value="'+document.querySelector('#carbohidratos').value+'">'+
+'<form name = "formulario" action="editado.html" method="get" onsubmit="capturarEnvio()" onreset="anular()">'+
+'<td><input type="text" name="alimento" value="'+document.querySelector('#alimento').value+'"></td>'+
+'<td><input type="text" name="calorias" value="'+document.querySelector('#calorias').value+'"></td>'+
+'<td><input type="text" name="grasas" value="'+document.querySelector('#grasas').value+'"></td>'+
+'<td><input type="text" name="proteina" value="'+document.querySelector('#proteina').value+'"></td>'+
+'<td><input type="text" name="carbohidratos" value="'+document.querySelector('#carbohidratos').value+'"</td>>'+
 '<input class="boton" type = "submit" value="Aceptar"> <input class="boton" type="reset" value="Cancelar">';
 document.formulario.submit();
-
 }
  
+
+
 function anular()
 {
-window.location.reload();
+	window.location.reload();
 }
